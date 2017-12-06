@@ -8,6 +8,7 @@ defmodule Discuss.Topic do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:title])
+    |> unique_constraint(:title, name: :topics_title_index)
     |> validate_required([:title])
   end
 end
