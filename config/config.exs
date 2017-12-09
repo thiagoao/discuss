@@ -11,6 +11,7 @@ config :discuss,
 
 # Configures the endpoint
 config :discuss, Discuss.Endpoint,
+  http: [port: {:system, "PORT"}],
   url: [host: "localhost"],
   secret_key_base: "tAlKkMXDYkObhyjLj330AXpERzIdEU1fc6vAdvVN5deiPhqPNGWQX1oRu3yI+aNK",
   render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
