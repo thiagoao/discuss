@@ -1,8 +1,9 @@
 defmodule Discuss.Comment do
   use Discuss.Web, :model
 
-  alias Discuss.User
-  alias Discuss.Topic
+  @derive {Poison.Encoder, only: [:content]}
+
+  alias Discuss.{User, Topic}
 
   schema "comments" do
     field :content, :string
